@@ -1,0 +1,468 @@
+//BASIC INITIALIZR + SASS
+//BY : MARCELO BERTA adopted from Mat Helmes' "Stop Visual Pollution"
+
+// Variables
+$yellow: #FFE313
+$lt-blue: #6DCFF6
+$drk-blue: #262C62
+$transition: .3s
+$cnr: center no-repeat
+
+//Mixins
+@mixin hitchcock
+    font:
+        weight: normal
+        size: 1.6em
+        family: hitchcock
+
+@mixin transition
+    transition: $transition
+    -webkit-transition: $transition
+    -moz-transition: $transition
+    -o-transition: $transition
+
+@mixin transform-rotate-one
+    transform: rotate(-10deg)
+    -webkit-transform: rotate(-10deg)
+    -ms-transform: rotate(-10deg)
+    -o-transform: rotate(-10deg)
+    -moz-transform: rotate(-10deg)
+
+@mixin transform-rotate-two
+    transform: rotate(-10deg)
+    -webkit-transform: rotate(-10deg)
+    -ms-transform: rotate(-10deg)
+    -o-transform: rotate(-10deg)
+    -moz-transform: rotate(-10deg)
+
+@mixin transform-rotate-three
+    transform: rotate(25deg)
+    -webkit-transform: rotate(25deg)
+    -ms-transform: rotate(25deg)
+    -o-transform: rotate(25deg)
+    -moz-transform: rotate(25deg)
+
+@mixin transform-rotate-four
+    transform: rotate(10deg)
+    -webkit-transform: rotate(10deg)
+    -ms-transform: rotate(10deg)
+    -o-transform: rotate(10deg)
+    -moz-transform: rotate(10deg)
+
+@mixin transform-rotate-five
+    transform: rotate(2deg)
+    -webkit-transform: rotate(2deg)
+    -ms-transform: rotate(2deg)
+    -o-transform: rotate(2deg)
+    -moz-transform: rotate(2deg)
+
+//General
+html, button, input, select, textarea
+    color: #222
+
+h1, h2, h3, h4, h5, h6, p, a
+    font-weight: normal
+
+body
+    font-size: 1.2em
+    line-height: 1.6
+
+-moz-selection
+    background: #DE4B4F
+    text-shadow: none
+
+selection
+    background: #DE4B4F
+    text-shadow: none
+
+
+hr
+    display: block
+    height: 1px
+    border: 0
+    border-top: 1px solid #ccc
+    margin: 1em 0
+    padding: 0
+
+
+img
+    vertical-align: middle
+
+
+fieldset
+    border: 0
+    margin: 0
+    padding: 0
+
+
+textarea
+    resize: vertical
+
+
+.chromeframe
+    margin: 0.2em 0
+    background: $drk-blue
+    color: $yellow
+    padding: 0.2em 0
+
+
+
+//MAIN STYLES
+
+@font-face
+    font-family: hitchcock
+    src: url('../fonts/hitchcock.otf') format('opentype')
+    weight: normal
+
+html
+    background: $drk-blue
+
+body
+    min-width: 1000px
+    max-width: 100%
+    color: $drk-blue
+    font: normal 1.6em Peralta, hitchcock, helvetica, serif
+
+    @media screen and (max-width: 1000px)
+
+a
+    text-decoration: none
+    font-weight: bold
+    color: inherit
+
+    &:hover
+        text-decoration: underline
+
+    &:visit
+        color: inheret
+
+header
+    @include hitchcock
+    height: 101px
+    width: 100%
+    left: 0
+    top: 0
+    position: fixed
+    z-index: 3000
+    border-top: 10px solid $yellow
+    background: url('../img/date.svg') center right no-repeat
+
+    nav
+        width: 450px
+        height: 200px
+        position: relative
+        float: right
+        top: 0
+        margin: 0
+
+        .date
+            width: 450px
+            font-size: 24px
+            text-align: left
+            letter-spacing: 4px
+            margin: 46px 0 0 40px
+            color: $yellow
+            @include transform-rotate-four
+
+            span
+                color: white
+
+
+    #logo-big
+        width: 350px
+        position: absolute
+        padding: 0 0 0 24px
+
+
+        img
+            float: left
+            width: 150px
+
+        h1
+            font-size: 24px
+            float: left
+            margin: 10px 0 0 20px
+            line-height: 26px
+            color: white
+            letter-spacing: 4px
+
+        h1 a
+
+            &:hover
+                text-decoration: none
+
+    .logo-small
+        width: 75px
+        height: 86px
+        background: url('../img/logo-sml.svg') no-repeat
+        right: 420px
+        top: 10px
+        position: absolute
+
+        @include transform-rotate-one
+
+.scrollblock
+    position: relative
+    margin: 0
+    width: 100%
+    float: left
+
+.center
+    width: 1000px
+    margin: 0 auto
+    position: relative
+
+.welcome
+    @include hitchcock
+    height: 992px
+    width: 100%
+    padding: 0
+    background: url('../img/main-bg1.svg') no-repeat center top
+
+    .fifa
+        z-index: 50
+        position: absolute
+        top: 115px
+        left: 150px
+
+    .teams
+        z-index: 40
+        position: absolute
+        left: 500px
+        top: 90px
+
+        img
+            width: 450px
+            height: 350px
+
+    h2
+        z-index: 30
+        position: absolute
+        font-size: 38px
+        top: 420px
+        left: 160px
+        line-height: 50px
+        width: 600px
+
+        #line-break
+            left: 40px
+
+    h3
+        z-index: 30
+        position: absolute
+        font-size: 180px
+        top: 300px
+        left: 160px
+        width: 760px
+        letter-spacing: 0
+
+    h4
+        z-index: 20
+        position: absolute
+        font-size: 83px
+        top: 685px
+        left: 320px
+        @include transform-rotate-two
+        line-height: 46px
+        width: 680px
+
+        span
+            color: $yellow
+            margin-left: 80px
+
+
+    h5
+        size: 48px
+        color: $yellow
+        margin: 0
+        position: absolute
+        top: 640px
+        left: 160px
+
+    .arrow
+        position: absolute
+        width: 45px
+        height: 433px
+        top: 774px
+        left: 892px
+        background: url('../img/dotted-arrow.svg') no-repeat center bottom
+
+
+.muchachos
+    height: 4250px
+    padding-top: 50px
+    position: relative
+
+    h5
+        z-index: 10
+        background: $yellow
+        padding: 20px 50px
+        float: right
+        font-size: 43px
+        margin: 0 50px 200px 0
+        @include transform-rotate-three
+
+    img
+        z-index: 20
+
+    .arrow
+        position: absolute
+        width: 43px
+        height: 433px
+        top: 100px
+        left: 375px
+        background: url('../img/dotted-arrow.svg') no-repeat center bottom
+
+    .jugador
+        float: left
+        width: 1000px
+        height: 460px
+        position: relative
+        margin: 0 0 500px
+
+        p
+            z-index: 10
+            width: auto
+            position: absolute
+            text-align: center
+            font-size: 36px
+
+            span
+                color: #fff
+                font-size: 52px
+
+        .arrow
+            z-index: 2
+            position: absolute
+            width: 56px
+            height: 530px
+            top: 240px
+            left: 630px
+            background: url('../img/dotted-arrow.svg') no-repeat center bottom
+
+
+    .portrait
+        position: absolute
+
+    #player1
+        width: 935px
+        height: 334px
+        background: url('../img/main-bg2.svg') $cnr
+
+        .portrait
+            left: 50px
+
+        p
+            top: 0
+            left: 275px
+            font-size: 2.2em
+            line-height: 1.1em
+            @include transform-rotate-five
+
+        .rotate
+            color: $lt-blue
+            top: 195px
+            left: 430px
+            @include transform-rotate-two
+
+    #player2
+        width: 935px
+        height: 334px
+        z-index: 10
+        background: url('../img/main-bg3.svg') $cnr
+
+        .portrait
+            top: -80px
+            left: 600px
+
+        p
+            font-size: 2.5em
+            line-height: 1.1em
+            top: 0
+            left: 100px
+
+            span
+
+                font-size: 1.5em
+
+    #player3
+        width: 935px
+        height: 334px
+        background: url('../img/main-bg4.svg') $cnr
+
+        .portrait
+            top: -136px
+            left: 20px
+
+        p
+            font-size: 2.5em
+            line-height: 1.1em
+            top: -105px
+            left: 550px
+
+            span
+
+                font-size: 1.0em
+
+
+    #player4
+        width: 935px
+        height: 334px
+        background: url('../img/main-bg5.svg') $cnr
+
+        .portrait
+            top: -80px
+            left: -228px
+
+        p
+            font-size: 2.5em
+            line-height: 0.9em
+            text-align: left
+            top: 10px
+            left: 77px
+
+            span
+
+                font-size: 1.3em
+
+    #player5
+        z-index: 10
+        height: 460px
+        width: 1000px
+
+        .portrait
+            top: 0
+            left: 90px
+
+.final
+    height: 350px
+    margin: 0 auto
+
+    h3
+        text-align: center
+        width: 100%
+        font-size: 63px
+        color: white
+        margin: 0
+
+    .button
+        display: block
+        margin: 0 auto
+        clear: both
+        width: 267px
+        height: 250px
+
+    .button:hover
+        @include transform-rotate-two
+
+footer
+    background: url('../img/main-bg6.svg') center right repeat-x
+    width: 100%
+    height: 82px
+
+    p
+        text-align: center
+        color: $drk-blue
+
+
+//END MAIN STYLES
